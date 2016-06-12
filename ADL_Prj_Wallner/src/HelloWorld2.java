@@ -5,27 +5,26 @@ public class HelloWorld2 {
 		// TODO Auto-generated method stub
 		// KeyWordsAndExpressions
 
-		boolean gameOver = true;
-		int score = 800;
-		int levelCompleted = 5;
-		int bonus = 100;
-
-		int highscore = cacludateStore(gameOver, score, levelCompleted, bonus);
-
-		System.out.println(highscore);
+		
+		int newSocre=calculateScore("TIM", 500);
+		System.out.println("New score is " + newSocre);
+		
+		calculateScore(75);
+		
 	}
-
-	public static int cacludateStore(boolean gameOver, int score, int levelComplete, int bonus) {
-
-		if (gameOver) {
-
-			return 1;
-		} else {
-
+	
+	
+	public static int calculateScore(String playerNmae, int score){
+		System.out.println("Player " + playerNmae + " scored " + score + " points");
+		return score *1000;
 		}
-		return -1;
+	
+	public static int calculateScore(int score){
+		System.out.println("Unnamed Player " + score + " points");
+		return score *1000;
+		}
 
-	}
-
-
+	
+	
+	
 }
