@@ -1,0 +1,21 @@
+
+public class HalloWorld {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		System.out.println("Hallo Alex wir lernen JAVA");
+		
+		int meineErsteZahl = (5 + 55)*2;
+		int meineZweiteZahl = 5;
+		int meineDritteZahl = meineErsteZahl *meineZweiteZahl;
+		int summe = meineErsteZahl + meineZweiteZahl + meineDritteZahl;
+		
+		int MyLastOne = 1000 - summe;
+		
+		System.out.println("das ist meine erste zahl "+ MyLastOne);
+		
+		
+	}
+
+}
