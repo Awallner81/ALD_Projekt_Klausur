@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.Date;
+import java.util.Scanner;
 import java.util.StringTokenizer;
 
 public class main {
@@ -30,11 +31,23 @@ public class main {
 		//System.out.println(meineOrteListe1.getId());
 		
 		
-		
+		Scanner scanner = new Scanner(System.in);
 		String fileName = "sampledata1.csv";
         try {
-            BufferedReader br = new BufferedReader( new FileReader("c:/fh/orte.txt"));
-            String strLine = null;
+            scanner = new Scanner(new BufferedReader( new FileReader("c:/fh/orte.txt")));
+            scanner.useDelimiter(",");
+            
+            while (scanner.hasNextLine()) {
+				int id = scanner.nextInt();
+				scanner.skip(scanner.delimiter());
+				String name = scanner.next();
+				scanner.skip(scanner.delimiter());
+			}
+            		
+            	
+            
+            
+            /*  String strLine = null;
             StringTokenizer st = null;
             int lineNumber = 0, tokenNumber = 0;
 
@@ -42,10 +55,11 @@ public class main {
                 lineNumber++;
                 String[] result = fileName.split(",");
                  
-              Orte o1 = new Orte(result., name)
+                int id = result.
                 
-                //for (int i = 0; i < result.length; i++) {
-				////}
+                for (int i = 0; i < result.length; i++) {
+					Orte i = new Orte(result., name)
+				}*/
                 
                 //for (int x=0; x<result.length; x++) {
                //    System.out.println(result[x]);

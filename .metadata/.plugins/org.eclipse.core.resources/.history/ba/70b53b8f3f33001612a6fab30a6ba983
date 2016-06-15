@@ -42,10 +42,11 @@ public class main {
                 lineNumber++;
                 String[] result = fileName.split(",");
                  
-              Orte o1 = new Orte(result., name)
+              
                 
-                //for (int i = 0; i < result.length; i++) {
-				////}
+                for (int i = 0; i < result.length; i++) {
+					Orte i = new Orte(result., name)
+				}
                 
                 //for (int x=0; x<result.length; x++) {
                //    System.out.println(result[x]);

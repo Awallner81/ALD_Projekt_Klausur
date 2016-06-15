@@ -1,12 +1,12 @@
 package Server_Route_Planner;
-
+package samples.uebung.hilfe;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 
 
-public class InputDataFR {
+public class FileHelper {
 	/**
 	 * Lieﬂt ein Textfile und liefert dessen Inhalt
 	 * als String retour.

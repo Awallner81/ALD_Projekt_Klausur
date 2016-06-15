@@ -1,0 +1,38 @@
+package Server_Route_Planner;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+
+public class InputDataFR {
+	
+	public static String readFile(String orte) {
+		String fileName1 = "c:/fh/orte.txt";
+        try {
+            BufferedReader br = new BufferedReader( new FileReader(fileName1));
+            String strLine = null;
+            StringTokenizer st = null;
+            int lineNumber = 0, tokenNumber = 0;
+
+            while((fileName1 = br.readLine()) != null) {
+                lineNumber++;
+                String[] result = fileName1.split(",");
+               //for (int x=0; x<result.length; x++) {
+               //    System.out.println(result[x]);
+                //}
+            }
+        }
+
+        catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+		
+	}
+}
