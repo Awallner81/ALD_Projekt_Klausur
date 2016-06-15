@@ -1,0 +1,32 @@
+package Server_Route_Planner;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class Server {
+
+	//throws IOException wird vom ServerSocket benötigt - Fehlerhandling
+	public static void main(String[] args) throws IOException {
+
+
+		//Consolenmeldung Info an USER: Server wird gestartet
+		
+		System.out.println("starting server");
+		
+		/*Serversocket wird mit einem bestimmten Port geöffnet um Netzwerkanfrange nazunehmen
+		Wichtig Expeption muss gesetzt werden wenn fehler auftritt zb. Port belegt*/
+		
+		ServerSocket server = new ServerSocket(5000);
+		
+		//Consolenmeldung Info an USER: Warten auf clientverbindung
+		System.out.println("waitng for client");
+		
+		//server.accept wartet auf client und verbindet mit server
+		Socket client = server.accept();
+		
+		//Consolenmeldung Info an USER: Client hat sich verbunden
+		System.out.println("got client");
+	}
+
+}

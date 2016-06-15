@@ -1,0 +1,32 @@
+
+public class HelloWorld3 {
+
+	public static void main(String[] args) {
+
+		// TODO Auto-generated method stub
+
+		
+		String month = "JANUARY";
+		month.toLowerCase();
+		
+		System.out.println(month);
+		
+		int switchValue =3;
+		
+		switch(switchValue){
+		
+		case 1:
+			System.out.println("Value was 1");
+			break;
+		case 2:
+			System.out.println("Value was 2");
+			break;
+			
+		default:
+			System.out.println("was not 1 or 2");
+			break;
+		}
+		
+	}
+
+}

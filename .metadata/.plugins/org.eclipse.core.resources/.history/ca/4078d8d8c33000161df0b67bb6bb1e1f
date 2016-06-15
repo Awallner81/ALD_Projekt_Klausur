@@ -1,0 +1,43 @@
+import org.omg.CORBA.PUBLIC_MEMBER;
+
+public class HelloWorld3 {
+
+	public static void main(String[] args) {
+
+		// TODO Auto-generated method stub
+
+		
+		String month = "JANUARy";
+		month.toLowerCase();
+		
+		System.out.println(month.toLowerCase());
+		
+		int switchValue =3;
+		
+		switch(switchValue){
+		
+		case 1:
+			System.out.println("Value was 1");
+			break;
+		case 2:
+			System.out.println("Value was 2");
+			break;
+			
+		default:
+			System.out.println("was not 1 or 2");
+			break;
+		}
+		
+		for (int i = 8; i > 2; i++) {
+			
+			System.out.println("10.000 at "+ i +" % " + String.format("%.2f",calculateInteres(10000.0, i)));
+				
+		}
+		}
+
+	   public static double calculateInteres(double amount, double interestRaste){
+		return (amount *(interestRaste/100));
+	
+	}
+
+}
