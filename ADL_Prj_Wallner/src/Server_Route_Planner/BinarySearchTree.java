@@ -1,8 +1,5 @@
 package Server_Route_Planner;
 
-import java.util.*;
-import java.io.*;
-
 public class BinarySearchTree extends Orte {
 	
 	  public Node root;
@@ -20,7 +17,7 @@ public class BinarySearchTree extends Orte {
 	    public BinarySearchTree()
 	    /**
 	     * constructor to initialize the internal binary search tree. 
-	     * The data element should be an object of the type MovieInfo, described above.
+	     * The data element should be an object of the type Orte, described above.
 	     */
 	    {   
 	        super(0,  "");

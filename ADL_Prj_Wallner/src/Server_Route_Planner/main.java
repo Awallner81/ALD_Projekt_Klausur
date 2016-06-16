@@ -5,81 +5,50 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.Date;
+import java.util.Scanner;
 import java.util.StringTokenizer;
 
 public class main {
 
 	public static void main(String[] args) {
-		
-		
-		Date date1 = new Date(0);
-		InputDataFR myFileReader = new InputDataFR();
-		
-		String test= myFileReader.readFile("c:/fh/orte.txt");
-
-		System.out.println(test);
-
-		//Orte als Opjekte in den Speicher laden
-		
-		Orte meineOrteListe1 = new Orte(1, "Testorte1");
-		Orte meineOrteListe2 = new Orte(2, "Testorte2");
-		Orte meineOrteListe3 = new Orte(3, "Testorte3");
-		Orte meineOrteListe4 = new Orte(4, "Testorte4");
-		
-		//System.out.println(meineOrteListe1.getName());
-		//System.out.println(meineOrteListe1.getId());
-		
-		
-		
-		String fileName = "sampledata1.csv";
-        try {
-            BufferedReader br = new BufferedReader( new FileReader("c:/fh/orte.txt"));
-            String strLine = null;
-            StringTokenizer st = null;
-            int lineNumber = 0, tokenNumber = 0;
-
-            while((fileName = br.readLine()) != null) {
-                lineNumber++;
-                String[] result = fileName.split(",");
-                 
-              Orte o1 = new Orte(result., name)
+				
+		 Scanner scanner = null;
+		 BinarySearchTree meinBST = new BinarySearchTree();
+		 Orte orte = new Orte(0, null);
+            try {
+                scanner = new Scanner(new BufferedReader(new FileReader("orte.txt")));
+                //scanner.useDelimiter(",");
                 
-                //for (int i = 0; i < result.length; i++) {
-				////}
                 
-                //for (int x=0; x<result.length; x++) {
-               //    System.out.println(result[x]);
-                //}
-            }
-        }
+                while(scanner.hasNextLine()) {
 
-        catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+                    String input = scanner.nextLine();
+                    String[] data = input.split(",");
+                    int id = Integer.parseInt(data[0]);
+                    String name = data[1];
+                    //System.out.println(id + ": " + name);
+                    orte = new Orte(id, name);
+                    meinBST.insert(orte); 
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                if(scanner != null) {
+                    scanner.close();
+                }
+            } 
 
-      
-        BinarySearchTree meinBST = new BinarySearchTree();
-        Orte o1 = new Orte(0, "GRAZ");
-        Orte o2 = new Orte(1, "Wien");
-        Orte o3= new Orte(2, "Linz");
-               
+		
+	System.out.println(orte.getName());
+	System.out.println(orte.getId());    
+	
+        String suche="Linz";
         
-        meinBST.insert(o1);
-        meinBST.insert(o2);
-        meinBST.insert(o2);
+        System.out.println("Suche " + suche);
+        System.out.println(meinBST.findExact(suche));
         
-        System.out.println("Suche Wien");
-        Orte Ergebnis = meinBST.findExact("Wien");
-        
-        System.out.println("ID von Wien = " +Ergebnis.getId());
-        
-        
-      
-        
-   
-        
-        
-        
-	}}
+       // System.out.println("ID von "+ suche +" = " +Ergebnis.getId());
+  
+
+	}
+	}
