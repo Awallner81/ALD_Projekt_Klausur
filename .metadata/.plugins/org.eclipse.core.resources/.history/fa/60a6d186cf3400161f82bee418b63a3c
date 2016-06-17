@@ -1,0 +1,98 @@
+package Server_Route_Planner;
+
+public class BSTNode {
+	    int key;
+	    String name;
+	    Object value;
+	    
+	    private  BSTNode left;
+	    private  BSTNode right;
+		public Object orte;
+
+	    public BSTNode( int key, String name, Object value )
+	    {
+	        this.key = key;
+	        this.name = name;
+	        this.value = value;
+	        
+	    }
+
+	    //if key not found in BST then it is added. If jey already exists then that node's value
+	    //is updated.
+	    public void put( int key, String name, Object value )
+	    {
+	        if ( key < this.key)         
+	        {             
+	            if ( left != null )             
+	            {                 
+	                left.put( key, name,value );             
+	            }             
+	            else             
+	            {                 
+	                left = new BSTNode( key, name, value );             
+	            }         
+	        }         
+	        else if ( key > this.key )
+	        {
+	            if ( right != null )
+	            {
+	                right.put( key, name, value );
+	            }
+	            else
+	            {
+	                right = new BSTNode( key, name, value );
+	            }
+	        }
+	        else
+	        {
+	            //update this one
+	            this.value = value;
+	        }
+	    }
+
+	    //find Node with given key and return it's value
+	    public Object get( int key )
+	    {
+	        if ( this.key == key ) 
+	        {
+	            return value;
+	        }
+
+	        if ( key < this.key  )
+	        {
+	            return left == null ? null : left.get( key );
+	        }
+	        else
+	        {
+	            return right == null ? null : right.get( key );
+	        }
+	    }
+	
+	  //find Node with given key and return it's value
+	    public int getID( String name )
+	    {
+	        if (  this.name.equals(name)) 
+	        {
+	            return  key;
+	        }
+
+	        if ( this.name.compareTo(name) < 0 )
+	        {
+	            return left == null ? null : left.getID(name);
+	        }
+	        else 
+	        {
+	            return right == null ? null : right.getID(name);
+	        }
+	       
+	    }
+	    private String findID(String name) {
+		    if (this.name == null) return  null;
+		    int cmp = name.compareToIgnoreCase(this.name);
+		    if      (cmp < 0) return findID( left.name);
+		    else if (cmp > 0) return findID(right.name);
+		    else              return name;
+		}
+	  
+	   
+}

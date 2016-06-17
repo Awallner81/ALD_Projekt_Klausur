@@ -1,0 +1,66 @@
+package Server_Route_Planner;
+
+public class BST {
+
+	  BSTNode root;
+	  
+	    int totalnodes = 0; //keeps track of the inorder number for horiz. scaling 
+	    int maxheight=0;//keeps track of the depth of the tree for vert. scaling
+
+	    public int treeHeight(Node t){
+	    	if(t==null) return -1;
+	              else return 1 + max(treeHeight(t.left),treeHeight(t.right));
+	        }
+	        public int max(int a, int b){
+	    	  if(a>b) return a; else return b;
+	        }
+
+	        public void computeNodePositions() {
+	          int depth = 1;
+	          inorder_traversal(root, depth);
+	        }
+	    
+	    
+	    public void put( int key, String name, Object value )
+	    {
+	        if ( root == null )
+	        {
+	            root = new BSTNode( key, name, value );
+	        }
+	        else
+	        {
+	            root.put( key, name, value );
+	        }
+	    }
+
+	    public String get( int key )
+	    {
+	        return root == null ? null : root.get( key ).toString();
+	    }
+	    
+	    public int getID( String str )
+	    {
+	        return root == null ? null : root.getID(str);
+	    }
+	    
+	 // print leaf nodes 
+	 		public static  void printLeafNodes(BSTNode node) {
+	 			if (node == null)
+	 				return;
+	 			if (node.left == null && node.right == null) {
+	 				System.out.printf("%d ", node.name);
+	 			}
+	 			printLeafNodes(node.left);
+	 			printLeafNodes(node.right);
+	 		}
+	 		  public void inorder_traversal(BSTNode root2, int depth) { 
+	 		        if (root2 != null) {
+	 		          inorder_traversal(root2.left, depth + 1); //add 1 to depth (y coordinate) 
+	 		        
+	 				root2.xpos = totalnodes++; //x coord is node number in inorder traversal
+	 		          root2.ypos = depth; // mark y coord as depth
+	 		          inorder_traversal(root2.right, depth + 1);
+	 		        }
+
+}
+}

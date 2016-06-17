@@ -1,0 +1,68 @@
+package Server_Route_Planner;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.sql.Date;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
+public class main {
+
+	public static void main(String[] args) {
+
+		Scanner scanner = null;
+		BinarySearchTree meinBST = new BinarySearchTree();
+		BST tree = new BST();
+		try {
+			scanner = new Scanner(new BufferedReader(new FileReader("orte.txt")));
+			// scanner.useDelimiter(",");
+
+			while (scanner.hasNextLine()) {
+
+				String input = scanner.nextLine();
+				String[] data = input.split(",");
+				int id = Integer.parseInt(data[0]);
+				String name = data[1];
+				Object value = data[1];
+				System.out.println(id + ": " + name);
+				tree.put(id, name, value);
+
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			if (scanner != null) {
+				scanner.close();
+			}
+		}
+
+		//String suche = "Linz";
+
+		//System.out.println("Suche " + suche);
+		//System.out.println(meinBST.findExact(suche));
+
+		// System.out.println("ID von "+ suche +" = " +Ergebnis.getId());
+
+		// tree.put( "f", "eff" );
+		// tree.put( "c", "sea" );
+		// tree.put( "a", "aye" );
+		// tree.put( "e", "eee" );
+		// tree.put( "i", "eye" );
+		// tree.put( "h", "aitch" );
+		// tree.put( "z", "zed" );
+
+		String str = tree.get(0); // str will equal "eye"
+		System.out.println(str);
+
+		str = tree.get(5); // str will equal "eye updated"
+		System.out.println(str);
+		
+		int id1 =  tree.getID("Graz"); // str will equal "eye"
+		System.out.println("suche GRAZ " + id1);
+//		
+//		int id2 = tree.getID("Linz"); // str will equal "eye"
+//		System.out.println("suche Linz "+ id2);
+}
+}

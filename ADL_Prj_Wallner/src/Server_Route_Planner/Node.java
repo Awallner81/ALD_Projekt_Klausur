@@ -6,7 +6,8 @@ package Server_Route_Planner;
 		
 			 	String data; 
 			 	Node left; 
-			 	Node right;	 
+			 	Node right;
+			 
 			 	public Node(String data){ 
 			 		this.data = data; 
 			 		left = null; 
