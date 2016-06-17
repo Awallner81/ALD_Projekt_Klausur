@@ -1,0 +1,50 @@
+package Server_Route_Planner;
+
+public class BinarySearchTree {
+
+	/**
+	 * Wurzel des Baums (Startknoten)
+	 */
+	private Ort root;
+	
+	public Ort getRoot() {
+		return root;
+
+	}
+	/**
+	 * Neues Wort hinzufügen
+	 * @param wort Hinzuzufügendes Wort
+	 */
+	public void add(String wort) {
+		Wort neu = new Wort(wort);
+		if (root == null) {			// Fall 1: Baum ist leer
+			root = neu;
+			return;
+		}
+		Wort w = root;				// Fall 2: Baum ist nicht leer
+		while (true) {
+			int vgl = wort.compareTo(w.getWort());
+			if (vgl < 0) {			// Neues Wort ist lexikographisch kleiner
+				if (w.getLeft() == null) {
+					w.setLeft(neu);
+					neu.setParent(w);
+					return;
+				}
+				w = w.getLeft();
+			}
+			else if (vgl > 0) {		// Neues Wort ist lexikographisch größer
+				if (w.getRight() == null) {
+					w.setRight(neu);
+					neu.setParent(w);
+					return;
+				}
+				w = w.getRight();
+			}
+			else {					// Neues Wort ist lexikographisch gleich
+				return;
+			}
+		}
+	}
+
+}
+	

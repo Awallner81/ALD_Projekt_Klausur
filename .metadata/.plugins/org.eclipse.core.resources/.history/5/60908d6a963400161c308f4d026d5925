@@ -1,0 +1,40 @@
+package Server_Route_Planner;
+
+public class BinarySearchTree {
+
+	/**
+	 * Wurzel des Baums (Startknoten)
+	 */
+	private Ort root;
+	
+	public Ort getRoot() {
+		return root;
+
+	}
+	/**
+	 * Neues Wort hinzufügen
+	 * @param wort Hinzuzufügendes Wort
+	 */
+	public void insertNode(int id) {
+	    root = insertNode(root, new Node(id));
+	}
+
+	// private recursive call
+
+	private Node insertNode(Node currentParent, Node newNode) {
+
+	    if (currentParent == null) {
+	        return newNode;
+	    } else if (newNode.key > currentParent.key) {
+	        currentParent.right = insertNode(currentParent.right, newNode);
+	    } else if (newNode.key < currentParent.key) {
+	        currentParent.left = insertNode(currentParent.left, newNode);
+	    }
+
+	    return currentParent;
+	}
+		
+	}
+
+}
+	

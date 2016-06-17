@@ -1,0 +1,15 @@
+
+public class BinarySearchTree {
+
+	/**
+	 * Wurzel des Baums (Startknoten)
+	 */
+	private Orte root;
+	
+	public Orte getRoot() {
+		return root;
+	
+	
+	}
+}
+	

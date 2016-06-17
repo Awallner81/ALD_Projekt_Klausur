@@ -1,0 +1,15 @@
+import java.util.Set;
+
+public class BinarySeachTree {
+
+	/**
+	 * Wurzel des Baums (Startknoten)
+	 */
+	private Wort root;
+	
+	public Wort getRoot() {
+		return root;
+	
+	
+	}
+	}

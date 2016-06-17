@@ -1,13 +1,14 @@
 package Server_Route_Planner;
 
-public class BinarySearchTree extends Orte {
+public class BinarySearchTree extends Ort {
 	
 	  public Node root;
 	    public class Node{
-	        public Orte orte;
+	        public Ort orte;
 	        public Node left, right;
+			public String data;
 
-	    public Node(Orte orte)
+	    public Node(Ort orte)
 	    {
 	        this.orte = orte;
 	       
@@ -24,11 +25,11 @@ public class BinarySearchTree extends Orte {
 
 	    }
 
-	    public Orte findExact(String key) {
+	    public Ort findExact(String key) {
 	    return findExact(root, key);
 	}
 
-	private Orte findExact(Node x, String key) {
+	private Ort findExact(Node x, String key) {
 	    if (x == null) return null;
 	    int cmp = key.compareToIgnoreCase(x.orte.name);
 	    if      (cmp < 0) return findExact(x.left, key);
@@ -36,13 +37,13 @@ public class BinarySearchTree extends Orte {
 	    else              return x.orte;
 	}
 
-	    public void insert(Orte data)
+	    public void insert(Ort data)
 	    {
 	        if (data == null) {return; }
 	        root = insert(root, data);
 	    }
 
-	    public Node insert(Node x, Orte data)
+	    public Node insert(Node x, Ort data)
 	    {   
 	        if (x == null) return new Node(data);
 	        int cmp = data.id - x.orte.id;
@@ -51,6 +52,15 @@ public class BinarySearchTree extends Orte {
 	        else if (cmp == 0)  x.orte = data;
 	        return x;
 	    }
+	    
+	    
+	    public void display(Node root){
+	   		if(root!=null){
+	   			display(root.left);
+	   			System.out.print(" " + root.data);
+	   			display(root.right);
+	   		}
 	}
+}
   
 

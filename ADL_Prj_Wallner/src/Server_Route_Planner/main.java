@@ -1,12 +1,10 @@
 package Server_Route_Planner;
 
+import java.awt.DisplayMode;
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.sql.Date;
 import java.util.Scanner;
-import java.util.StringTokenizer;
 
 public class main {
 
@@ -14,7 +12,7 @@ public class main {
 				
 		 Scanner scanner = null;
 		 BinarySearchTree meinBST = new BinarySearchTree();
-		 Orte orte = new Orte(0, null);
+		 Ort ort = new Ort( 0, null);
             try {
                 scanner = new Scanner(new BufferedReader(new FileReader("orte.txt")));
                 //scanner.useDelimiter(",");
@@ -27,8 +25,11 @@ public class main {
                     int id = Integer.parseInt(data[0]);
                     String name = data[1];
                     //System.out.println(id + ": " + name);
-                    orte = new Orte(id, name);
-                    meinBST.insert(orte); 
+                    ort = new Ort(id,name);
+                    meinBST.insert(ort);; 
+                	  
+                	
+                  
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -39,16 +40,17 @@ public class main {
             } 
 
 		
-	System.out.println(orte.getName());
-	System.out.println(orte.getId());    
+	  
 	
-        String suche="Linz";
+        String suche="graz";
         
         System.out.println("Suche " + suche);
-        System.out.println(meinBST.findExact(suche));
+        Ort Ergebnis = meinBST.findExact(suche);
         
-       // System.out.println("ID von "+ suche +" = " +Ergebnis.getId());
-  
-
-	}
+       System.out.println("ID von "+ suche +" = " +Ergebnis);
+      
+       
+	
+   	}
+	
 	}
