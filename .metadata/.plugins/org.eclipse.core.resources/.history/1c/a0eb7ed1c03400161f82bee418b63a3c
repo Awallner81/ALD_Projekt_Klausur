@@ -1,0 +1,82 @@
+package Server_Route_Planner;
+
+public class BSTNode {
+	    private int key;
+	    private String value;
+	    private BSTNode left, right;
+
+	    public BSTNode( int key, String value )
+	    {
+	        this.key = key;
+	        this.value = value;
+	    }
+
+	    //if key not found in BST then it is added. If jey already exists then that node's value
+	    //is updated.
+	    public void put( int key, String value )
+	    {
+	        if ( key < this.key)         
+	        {             
+	            if ( left != null )             
+	            {                 
+	                left.put( key, value );             
+	            }             
+	            else             
+	            {                 
+	                left = new BSTNode( key, value );             
+	            }         
+	        }         
+	        else if ( key > this.key )
+	        {
+	            if ( right != null )
+	            {
+	                right.put( key, value );
+	            }
+	            else
+	            {
+	                right = new BSTNode( key, value );
+	            }
+	        }
+	        else
+	        {
+	            //update this one
+	            this.value = value;
+	        }
+	    }
+
+	    //find Node with given key and return it's value
+	    public Object get( int key )
+	    {
+	        if ( this.key == key ) 
+	        {
+	            return value;
+	        }
+
+	        if ( key < this.key  )
+	        {
+	            return left == null ? null : left.get( key );
+	        }
+	        else
+	        {
+	            return right == null ? null : right.get( key );
+	        }
+	    }
+	
+	  //find Node with given key and return it's value
+	    public int getOrtNameID( String value2 )
+	    {
+	        if ( (this.value).toString().equals(value2)) 
+	        {
+	            return  key;
+	        }
+
+	        if ( (value2).compareTo(this.value.toString()) <0 )
+	        {
+	            return left == null ? null : left.getOrtNameID(value2);
+	        }
+	        else
+	        {
+	            return right == null ? null : right.getOrtNameID(value2);
+	        }
+	    }
+}

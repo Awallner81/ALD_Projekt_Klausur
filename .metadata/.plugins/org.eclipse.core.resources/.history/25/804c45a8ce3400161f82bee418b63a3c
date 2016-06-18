@@ -1,0 +1,39 @@
+package Server_Route_Planner;
+
+import Server_Route_Planner.BinarySearchTree.Node;
+
+public class BST {
+
+	  BSTNode root;
+	  
+	   
+	    public void put( int key, String name, Object value )
+	    {
+	        if ( root == null )
+	        {
+	            root = new BSTNode( key, name, value );
+	        }
+	        else
+	        {
+	            root.put( key, name, value );
+	        }
+	    }
+
+	    public String get( int key )
+	    {
+	        return root == null ? null : root.get( key ).toString();
+	    }
+	    
+	    public int getID( String str )
+	    {
+	        return root == null ? null :  root.getID(str);
+	    }
+	    
+	    public int find( String str )
+	    {
+	        return root == null ? null :  root.find;
+	    }
+	    
+	 		
+
+}

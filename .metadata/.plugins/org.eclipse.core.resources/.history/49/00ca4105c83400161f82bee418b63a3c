@@ -1,0 +1,41 @@
+package Server_Route_Planner;
+
+public class BST {
+
+	  private BSTNode root;
+
+	    public void put( int key, String name, Object value )
+	    {
+	        if ( root == null )
+	        {
+	            root = new BSTNode( key, name, value );
+	        }
+	        else
+	        {
+	            root.put( key, name, value );
+	        }
+	    }
+
+	    public String get( int key )
+	    {
+	        return root == null ? null : root.get( key ).toString();
+	    }
+	    
+	    public int getID( String str )
+	    {
+	        return root == null ? null : root.getID(str);
+	    }
+	    
+	 // print leaf nodes 
+	 		public static  void printLeafNodes(BSTNode node) {
+	 			if (node == null)
+	 				return;
+	 			if (node.left == null && node.right == null) {
+	 				System.out.printf("%d ", node.name);
+	 			}
+	 			printLeafNodes(node.left);
+	 			printLeafNodes(node.right);
+	 		}
+	 	
+
+}

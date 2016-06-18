@@ -1,0 +1,28 @@
+package Server_Route_Planner;
+
+public class BST {
+
+	  private BSTNode root;
+
+	    public void put( int key, Object value )
+	    {
+	        if ( root == null )
+	        {
+	            root = new BSTNode( key, value );
+	        }
+	        else
+	        {
+	            root.put( key, value );
+	        }
+	    }
+
+	    public Object get( int key )
+	    {
+	        return root == null ? null : root.get( key );
+	    }
+	    
+	    public Object getName( Object value )
+	    {
+	        return root == null ? null : (root.getOrtNameID(value));
+	    }
+}
