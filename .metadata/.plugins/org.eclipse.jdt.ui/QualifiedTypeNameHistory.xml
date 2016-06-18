@@ -28,4 +28,5 @@
 <fullyQualifiedTypeName name="java.io.FileReader"/>
 <fullyQualifiedTypeName name="Server_Route_Planner.Orte"/>
 <fullyQualifiedTypeName name="java.lang.NegativeArraySizeException"/>
+<fullyQualifiedTypeName name="java.awt.DisplayMode"/>
 </qualifiedTypeNameHistroy>
